@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+<style type="text/css">
+.slider-container{
+  display: block;
+  width:400px;
+  height:200px;
+  overflow:hidden;
+  border:1px solid black;
+}
+.slider-holder{
+  width:99999999px;
+  height:100%;
+  position:relative;
+  transition:3s;
+
+}
+.slider{
+  width:400px;
+  height:100%;
+  float:left;
+}
+.slider:nth-child(odd){
+  background-color:yellow;
+}
+
+</style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slider-holder">
+      <div class="slider">rock</div>
+      <div class="slider">paper</div>
+      <div class="slider">scissors</div>
+      <div class="slider">rock</div>
+      <div class="slider">paper</div>
+      <div class="slider">scissors</div>
+      <div class="slider">rock</div>
+      <div class="slider">paper</div>
+      <div class="slider">scissors</div>
+      <div class="slider">rock</div>
+      <div class="slider">paper</div>
+      <div class="slider">scissors</div>
+      <div class="slider">rock</div>
+      <div class="slider">paper</div>
+      <div class="slider">scissors</div>
+      <div class="slider">rock</div>
+      <div class="slider">paper</div>
+      <div class="slider">scissors</div>
+      <div class="slider">rock</div>
+      <div class="slider">paper</div>
+      <div class="slider">scissors</div>
+    </div>
+  </div>
+  <input type="button" name="" id="btn" value="ok" onclick="">
+
+
+
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#btn").on('click',function(){
+    var shiftVal = randNum(1600, 8000);
+    shiftVal = shiftVal - (shiftVal%400);
+    $(".slider-holder").css("left","-"+shiftVal+"px");
+    console.log(shiftVal);
+  })
+
+
+})
+
+  document.querySelector("#btn").addEventListener('click', function(){
+    var shiftVal = randNum(200, 1200);
+    document.querySelector(".slider-holder").style.left = shiftVal;
+    console.log(shiftVal);
+  })
+
+function doIt(){
+    var shiftVal = randNum(1200, 9999999)
+    document.querySelector(".slider-holder").style.left = shiftVal;
+    console.log(shiftVal);
+}
+function randNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+</script>
+</html>

@@ -1,0 +1,62 @@
+<?php 
+session_start();
+$_SESSION['current_user'];
+
+include("mysqli_connect.php");
+
+if(isset($_POST['processGame'])|| isset($_REQUIRE['uc'])  ){
+
+	// $userChoice = $_POST['choice'];
+	$userChoice = $_REQUIRE['uc'];
+	$options = ['rock','scissors','paper'];
+	$randNum = rand(0,2);
+	$compChoice = $options[$randNum];
+	echo "<p>Your choice is $userChoice</p>";
+	echo "<p>Bot's choice is ".$compChoice."</p><br/>";
+
+	$userWon = false;
+	if($userChoice===$compChoice){
+		unset($userWon);  // unset boolean in case of DRAW
+	}else{
+		if($userChoice === 'rock'){
+			if($compChoice === 'scissors')
+				$userWon = true;
+		}
+		else if($userChoice === 'paper'){
+			if($compChoice === 'rock')
+				$userWon = true;
+		}
+		else if($userChoice === 'scissors'){
+			if($compChoice === 'paper')
+				$userWon = true;
+		}		
+	}
+
+	if(isset($userWon)){
+		//user WINS
+		if($userWon){
+			$query = "UPDATE users set credits = credits + 1 where id = ".$_SESSION['current_user'];
+			$message = "Congrats, You Won!";
+		}
+		//user LOSES
+		elseif(!$userWon){
+			$query = "UPDATE users set credits = credits - 1 where id = ". $_SESSION['current_user'];
+			$message = "Sorry, but you lost this time :( ";
+		}
+		$q = mysqli_stmt_init($dbcon);                                                //#9
+	    mysqli_stmt_prepare($q, $query);
+	    mysqli_stmt_execute($q);    
+	    mysqli_stmt_affected_rows($q);
+	}
+	// A DRAW
+	elseif(!isset($userWon)){
+		$message = "Draw, at least not a loose";
+	}
+	echo $message;
+	
+}
+else{
+	echo "Error!";
+}
+
+?>
