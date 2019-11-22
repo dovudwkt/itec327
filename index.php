@@ -142,7 +142,7 @@ $_SESSION['current_user'];
         <p>Bot</p>
         <div class='icon-holder-small' style='background:url("images/paper.png");'></div> 
       </div>
-
+      <P>working</P>
       <h2 class="row col-md-4">+2xp</h2>
       <p class="row col-md-4">Win!</p>      
 
