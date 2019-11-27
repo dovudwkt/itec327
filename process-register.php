@@ -4,15 +4,12 @@
 try {
 	$errors = array(); // Initialize an error array. 
 	// Check for a first name:                        
-        $first_name = filter_var( $_POST['first_name'], FILTER_SANITIZE_STRING);	
-	if (empty($first_name)) {
-		$errors[] = 'You forgot to enter your first name.';
+        $username = filter_var( $_POST['username'], FILTER_SANITIZE_STRING);	
+	if (empty($username)) {
+		$errors[] = 'You forgot to enter username.';
 	}
 	// Check for a last name:
-	    $last_name = filter_var( $_POST['last_name'], FILTER_SANITIZE_STRING);	
-	if (empty($last_name)) {
-		$errors[] = 'You forgot to enter your last name.';
-	}
+
 	// Check for an email address:
 	    $email = filter_var( $_POST['email'], FILTER_SANITIZE_EMAIL);	
 	if  ((empty($email)) || (!filter_var($email, FILTER_VALIDATE_EMAIL))) {
@@ -29,19 +26,34 @@ try {
 	} else {
 		$errors[] = 'You forgot to enter your password(s).';
 	}
+
+	require ('mysqli_connect.php'); // Connect to the db.     
+	$query = "SELECT username FROM users";
+	$result = mysqli_query($dbcon, $query);
+    if (mysqli_num_rows($result) > 0) {
+	    while( $row = mysqli_fetch_assoc($result) ){
+	    	if($row['username'] == $username){
+	    		$errors[] = "Username $username already exists. Try another one.";
+	    	}
+	    }  
+	}
+
+
+
+
 	if (empty($errors)) { // If everything's OK.              
 	// Register the user in the database...
 	// Hash password current 60 characters but can increase
 	    $hashed_passcode = password_hash($password1, PASSWORD_DEFAULT); 
-		require ('mysqli_connect.php'); // Connect to the db.     
+		
 		// Make the query:                                               
-		$query = "INSERT INTO users (id, name, surname, email, password, registration_date) ";
-		$query .="VALUES(' ', ?, ?, ?, ?, NOW() )";		                
+		$query = "INSERT INTO users (id, username, email, password, registration_date) ";
+		$query .="VALUES(' ', ?, ?, ?, NOW() )";		                
         $q = mysqli_stmt_init($dbcon);                                  
         mysqli_stmt_prepare($q, $query);
         // use prepared statement to insure that only text is inserted
         // bind fields to SQL Statement
-        mysqli_stmt_bind_param($q, 'ssss', $first_name, $last_name, $email, $hashed_passcode);
+        mysqli_stmt_bind_param($q, 'sss', $username, $email, $hashed_passcode);
      // execute query
         mysqli_stmt_execute($q);
 

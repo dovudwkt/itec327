@@ -16,14 +16,31 @@ $_SESSION['current_user'];
   <title>workout||Log in</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS File -->
-  <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity=
- "sha3849gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-   <!-- <script src="verify.js"></script> -->
+  <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha3849gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="AJAX-requests.js"></script>
 
    <style type="text/css">
+   .bg{
+    background: url("images/bg3.jpg");
+    background-size: 105%;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(1.4px);
+    
+   }
+   #container{
+    background: #91ceabbf;
+    border-radius: 0px 0 60px 60px;
+   }
      aside{
       float:right;
      }
@@ -93,7 +110,7 @@ $_SESSION['current_user'];
       height:100%;
       background-color:#1f1f1f69;
       z-index:99;
-      display:block;
+      display:none;
     }
     .modal{
       position: absolute;
@@ -102,6 +119,8 @@ $_SESSION['current_user'];
       /*margin-top: 8%;*/
       width: 30%;
       height: 70%;
+      min-height: 274px;
+      max-width:409px;
       display: flex;
       justify-content: center;
       flex-direction: row;
@@ -110,15 +129,16 @@ $_SESSION['current_user'];
     }
     .name-indicator{
       width: 33%;
-      height: 42%;
+      height: 32%;
       max-height:200px;
       margin: 15px;
-      flex: 1 24%;
+      flex: 1 25%;
     }
 
    </style>
 </head>
 <body>
+ 
 <!-- 
 <div class='name-indicator' style='float:left'>
   <p>Dovud</p>
@@ -131,6 +151,7 @@ $_SESSION['current_user'];
 </div>
  -->
 
+ <div class="bg"></div>
 <div class="modal-container" id="modal-container">
   <div class="modal" id="modal">
       <div class='name-indicator' style='float:left'>
@@ -142,16 +163,21 @@ $_SESSION['current_user'];
         <p>Bot</p>
         <div class='icon-holder-small' style='background:url("images/paper.png");'></div> 
       </div>
-      
-      <h2 class="row col-md-4">+2xp</h2>
-      <p class="row col-md-4">Win!</p>      
+
+      <table>
+        <tr><td><h2>+2xp</h2></td></tr>
+        <tr><td>You Won!</td></tr>
+      </table>
+
+      <!-- <h2 class="row col-md-4">+2xp</h2>
+      <p class="row col-md-4">Win!</p>       -->
 
     <button id="closeModal_btn" style="position: absolute;bottom: 0;margin-left: 41%;margin-right: 50%;">OK</button>
   </div>
 
 </div>
 
-<div class="container" style="margin-top:30px">     
+<div class="container" id="container" style="margin-top:5px">     
 <!-- Header Section -->
  <nav class="col-sm-2">
       <div class="btn-group-vertical btn-group-sm" role="group"
@@ -161,8 +187,7 @@ $_SESSION['current_user'];
       </div>
   </nav>
 <header class="jumbotron row col-sm-14"
-style="margin-bottom:2px; background:linear-gradient(white, #e3ffdfc2);
-  padding:20px;">
+style="margin-bottom:2px; padding:7px; background:linear-gradient(white, #e3ffdfc2);">
   <div class="col-sm-6"> <div id="show-name-xp"></div>   </div>
 <!-- <div class="col-sm-8"> </div> -->
     <div class="col-sm-6">
@@ -179,7 +204,8 @@ style="margin-bottom:2px; background:linear-gradient(white, #e3ffdfc2);
     
 </header>
   <div class="row" style="padding-left: 0px;">
-  <nav class="col-sm-2">
+  
+ <!--  <nav class="col-sm-2">
       <ul class="nav nav-pills flex-column">
       </ul>
   </nav>
@@ -188,7 +214,7 @@ style="margin-bottom:2px; background:linear-gradient(white, #e3ffdfc2);
   <aside class="">
     <div id="top-players-container"> </div>
 
-  </aside>
+  </aside> -->
 	
 <!--   <section>
     <div>
@@ -204,9 +230,10 @@ style="margin-bottom:2px; background:linear-gradient(white, #e3ffdfc2);
   		</form>
     </div>
 	</section> -->
-  <h2>Make your choice <?php if( isset($_SESSION['user_name']) ) echo $_SESSION['user_name']  ?></h2>
-  <section id="icons-section" class="row col-sm-14">
-    <div class="col-sm-4"><label for="rock"> <div class=" icon-holder" style="background:url('images/rock.png')">
+  <h2 class="mx-auto">Make your choice <?php if( isset($_SESSION['user_name']) ) echo $_SESSION['user_name']  ?></h2>
+  <section id="icons-sectionlll" class="row col-sm-10 mx-auto">
+    <div class="row mx-auto">
+      <div class="col-sm-4"><label for="rock"> <div class=" icon-holder" style="background:url('images/rock.png')">
     <input type="radio" hidden name="choice" value="rock" id="rock"></div></label>
     </div>
     <div class="col-sm-4"><label for="paper"><div class="icon-holder" style="background:url('images/paper.png')">
@@ -214,32 +241,21 @@ style="margin-bottom:2px; background:linear-gradient(white, #e3ffdfc2);
     </div>
     <div class="col-sm-4"><label for="scissors"><div class="icon-holder" style="background:url('images/scissors.png')">
     <input type="radio" hidden name="choice" value="scissors" id="scissors"></div></label>
-</div>
+    </div>
 <!-- <input type="button" value="play" onclick="play()" name=""> -->
-<input type="button" value="play" onclick="" id="playBtn" name="">
+    <input class="row mx-auto btn btn-primary btn-lg" type="button" value="play" onclick="" id="playBtn" name="">
+
+    </div>
   </section>
 	
 
 
 </div>
-<!-- <?php
- if(!isset($errorstring)) {
-        echo '<aside class="col-sm-2">';
-        // include('info-col.php');
-        echo '</aside>';
-        echo '</div>';
-        echo '<footer class="jumbotron text-center row col-sm-14"
-               style="padding-bottom:1px; padding-top:8px;">';
- }
- else
- {
-        echo '<footer class="jumbotron text-center col-sm-12"
-        style="padding-bottom:1px; padding-top:8px;">';
- }
-  // include('footer.php');
- ?> -->
-</footer>
+
 </div>
+
+
+ 
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -248,108 +264,19 @@ var modalContainer = $("#modal-container");
    $(document).on('click', '#closeModal_btn', function(){
       console.log("asdsad");
         modalContainer.hide();
+
+        $(".container").css({
+                        'filter':"none"
+                      }, 1000);
   });
 
-//     show_Top_Players();
-//     show_my_xp();
 
-// $("input[name='choice']").on('click', function(){
-//   var iconHolder = $(".icon-holder");
-//   for(var i=0;i<iconHolder.length;i++){
-//     iconHolder.removeClass("active");
-//   }
-//     $(this).parent().addClass("active");
-//     console.log($(this).val());
-// })
-
-// // send data on PLAY click by calling play() function
-// $("#playBtn").on('click', function(){play() } );
-
-// function play(){
-//   if(!document.querySelector("input[name='choice']:checked") ){
-//       alert("Enter your choice!");
-//   }else{
-//       var user_choice = document.querySelector("input[name='choice']:checked").value;
-//       console.log(user_choice);
-//       xhttp = new XMLHttpRequest();
-//       xhttp.onreadystatechange = function() {
-//         if (this.readyState == 4 && this.status == 200) {
-//           alert(this.responseText);
-//           displayResult(this.responseText);
-
-//           show_Top_Players();  //load and display updated values asynchronously
-//           show_my_xp();
-//         }
-//       };
-//           // send parameters to server for processing
-//       xhttp.open("GET", "process-game.php?uc="+user_choice, true);
-//       xhttp.send();
-//   }
-
-// }
-// var modalContainer = $("#modal-container");
-// modalContainer.show();
-
-
-// function displayResult(responseTxt){
-//   modalContainer.show();
-//   $("#modal").prepend(responseTxt);
-// }
-
-// $("#closeModal_btn").on('click', function(){
-//   closeModal();
-// })
-// function closeModal(){
-//   modalContainer.hide();
-// }
-
-
-// function show_Top_Players(){
-//   xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//       document.querySelector("#top-players-container").innerHTML = this.responseText;
-//     }
-//   };
-//   xhttp.open("GET", "show-top-players.php", true);
-//   xhttp.send();
-
-// }
-
-
-// function show_my_xp(){
-//   xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//       document.querySelector("#show-name-xp").innerHTML = this.responseText;
-//     }
-//   };
-//   xhttp.open("GET", "show-name-xp.php", true);
-//   xhttp.send();
-// }
-
-
-// //    // send new inputed value to server
-// // function sendDt(){
-// //   var user_choice = document.querySelector("#choice").value;
-// //   console.log(user_choice);
-// //   xhttp = new XMLHttpRequest();
-// //   xhttp.onreadystatechange = function() {
-// //     if (this.readyState == 4 && this.status == 200) {
-// //       alert(this.responseText);
-// //       show_Top_Players();  //load updated values asynchronously
-// //       show_my_xp();
-// //     }
-// //   };
-// //       // send parameters to server for processing
-// //   xhttp.open("GET", "process-game.php?uc="+user_choice, true);
-// //   xhttp.send();
-
-// // }
+   
 
 
 
 })
 </script>
+
 </body>
 </html>

@@ -5,11 +5,20 @@ try {
     require ('mysqli_connect.php');
     // Validate the email address
 // Check for an email address:
-               $email = filter_var( $_POST['email'], FILTER_SANITIZE_EMAIL);
-        if  ((empty($email)) || (!filter_var($email, FILTER_VALIDATE_EMAIL))) {
-               $errors[] = 'You forgot to enter your email address';
-               $errors[] = ' or the e-mail format is incorrect.';
+      
+        // $email = filter_var( $_POST['email'], FILTER_SANITIZE_EMAIL);
+        // if  ((empty($email)) || (!filter_var($email, FILTER_VALIDATE_EMAIL))) {
+        //        $errors[] = 'You forgot to enter your email address';
+        //        $errors[] = ' or the e-mail format is incorrect.';
+        // }
+
+        $username = filter_var( $_POST['username'], FILTER_SANITIZE_STRING);
+        if  (empty($username) ) {
+               $errors[] = 'You forgot to enter your username';
+               $errors[] = ' or the e-mail address.';
         }
+      
+
     // Validate the password
             $password = filter_var( $_POST['password'], FILTER_SANITIZE_STRING);
         if (empty($password)) {
@@ -17,10 +26,10 @@ try {
         }
    if (empty($errors)) { // If everything's OK.                             
 
- $query = "SELECT id, password, name FROM users WHERE email=?";
+ $query = "SELECT id, password FROM users WHERE username=?";
       $q = mysqli_stmt_init($dbcon);
       mysqli_stmt_prepare($q, $query);
-      mysqli_stmt_bind_param($q, "s", $email);
+      mysqli_stmt_bind_param($q, "s", $username);
       mysqli_stmt_execute($q);
       $result = mysqli_stmt_get_result($q);
       $row = mysqli_fetch_array($result, MYSQLI_NUM);  
@@ -31,7 +40,7 @@ try {
                  session_start();
                  // $_SESSION['current_user'] =  $rowAssoc['user_id'];
                  $_SESSION['current_user'] =  $row[0];
-                 $_SESSION['user_name'] =  $row[2];
+                 $_SESSION['user_name'] =  $username;
 
               $url = "index.php";   
               header('Location: ' . $url);

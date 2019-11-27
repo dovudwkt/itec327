@@ -11,6 +11,7 @@
   height:200px;
   overflow:hidden;
   border:1px solid black;
+  border-spacing: 90
 }
 .slider-holder{
   width:99999999px;
@@ -57,18 +58,37 @@
     </div>
   </div>
   <input type="button" name="" id="btn" value="ok" onclick="">
+  <input type="button" name="" id="btn2" value="rotate" onclick="">
 
 
 
 </body>
 <script type="text/javascript">
 $(document).ready(function(){
+ 
   $("#btn").on('click',function(){
     var shiftVal = randNum(1600, 8000);
     shiftVal = shiftVal - (shiftVal%400);
     $(".slider-holder").css("left","-"+shiftVal+"px");
     console.log(shiftVal);
   })
+
+
+
+$('#btn2').on('click', function(){
+ 
+  $('#foo').animate({  borderSpacing: -90 }, {
+    step: function(now,fx) {
+      $(this).css('-webkit-transform','rotate('+now+'deg)'); 
+      $(this).css('-moz-transform','rotate('+now+'deg)');
+      $(this).css('transform','rotate('+now+'deg)');
+    },
+    duration:'slow'
+},'linear');
+        
+});
+
+
 
 
 })

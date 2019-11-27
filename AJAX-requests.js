@@ -23,7 +23,7 @@ function play(){
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          alert(this.responseText);
+          // alert(this.responseText);
           displayResult(this.responseText);
 
           show_Top_Players();  //load and display updated values asynchronously
@@ -41,17 +41,18 @@ var modalContainer = $("#modal-container");
 
 
 function displayResult(responseTxt){
-  modalContainer.show();
+  modalContainer.fadeIn(200);
   $("#modal").html(responseTxt);
+ 
+  $(".container").delay(1000).css({
+                        "filter":"blur(4px)"
+                      }, 1500);
 }
 
-// $("#closeModal_btn").on('click', function(){
-//   closeModal();
-// })
+
 function closeModal(){
   modalContainer.hide();
 }
-
 
 function show_Top_Players(){
   xhttp = new XMLHttpRequest();

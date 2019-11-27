@@ -1,3 +1,14 @@
+check the query and styles: when lose the positioning is not apropriate 
+add color attribute to img element and put a shadow effect with img color on the modal 
+
+ // let shadowColor = $(".icon-holder-small").attr("themeColor");
+  // $('.modal').css('background-color', $shadowColor);
+
+https://api.jquery.com/jQuery.ready/
+
+
+
+
 <?php 
 session_start();
 $_SESSION['current_user'];
