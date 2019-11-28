@@ -67,14 +67,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {                               //#1
 <h2 class="h2 text-center" style="color:#f77623">Login</h2>
 <div class="box">
   <form action="login.php" method="post" name="loginform" id="loginform">
-    <div class="form-group row">
+   
+   <!--  <div class="form-group row collapse" id="username-login">
       <label for="username" class="col-sm-3 col-form-label">Username:</label>
-      <div class="col-sm-8">
+      <div class="col-sm-8" >
         <input type="text" class="form-control" id="username" name="username"
             placeholder="username" maxlength="30" required
             value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>" >
+            <a href='#' id="email-login-btn" onclick="emailLogin()">or login by email</a>
+      </div>
+     
+    </div> -->
+    <div class="form-group row " id="email-login">
+      <label for="email" class="col-sm-3 col-form-label">Email:</label>
+      <div class="col-sm-8 ">
+        <input type="text" class="form-control" id="email" name="email"
+            placeholder="email" maxlength="30" required
+            value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" >
+            <!-- <a href='#' >or login by Username</a> -->
       </div>
     </div>
+
+
     <div class="form-group row">
       <label for="password" class="col-sm-3 col-form-label">Password:</label>
       <div class="col-sm-8">
@@ -97,5 +111,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {                               //#1
 </div>
 
 </div>
+
+<script type="text/javascript">
+// function emailLogin(){
+//   document.querySelector("#email-login").classList.remove("collapse");
+//   document.querySelector("#username-login").classList.add("collapse");
+// }
+// function usernameLogin(){
+//   document.querySelector("#username-login").classList.remove("collapse");
+//   document.querySelector("#email-login").classList.add("collapse");;
+// }
+
+
+
+</script>
 </body>
 </html>
