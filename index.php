@@ -21,6 +21,17 @@ $_SESSION['current_user'];
 <script type="text/javascript" src="AJAX-requests.js"></script>
 
    <style type="text/css">
+   .blue{
+    background:blue;
+   }
+   .green{
+    background:green;
+   }
+   .red{
+    background:red;
+   }
+
+
    .bg{
     background: url("images/bg3.jpg");
     background-size: 105%;
@@ -270,7 +281,7 @@ var modalContainer = $("#modal-container");
                       }, 1000);
   });
 
-
+console.log($(".icon-holder-small").attr('themecolor'));
    
 
 

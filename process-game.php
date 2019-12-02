@@ -77,7 +77,7 @@ if(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice
 
     $output = "<div class='name-indicator' style='float:left'>";
     $output .= "<p>".$_SESSION['user_name']."</p>";
-	$output .= "<div class='icon-holder-small' themeColor='".$themeColor."' style='background:url(\"images/".$userChoice.".png\");'> </div> </div>";
+	$output .= "<div class='icon-holder-small' themecolor='".$themeColor."' style='background:url(\"images/".$userChoice.".png\");'> </div> </div>";
 	$output .= $sign;
 
 	$output .= "<div class='name-indicator' style='float:right'>"; 

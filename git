@@ -1,0 +1,44 @@
+[1mdiff --git a/index.php b/index.php[m
+[1mindex 3f9d6e7..34d6bcf 100644[m
+[1m--- a/index.php[m
+[1m+++ b/index.php[m
+[36m@@ -21,6 +21,17 @@[m [m$_SESSION['current_user'];[m
+ <script type="text/javascript" src="AJAX-requests.js"></script>[m
+ [m
+    <style type="text/css">[m
+[32m+[m[32m   .blue{[m[41m[m
+[32m+[m[32m    background:blue;[m[41m[m
+[32m+[m[32m   }[m[41m[m
+[32m+[m[32m   .green{[m[41m[m
+[32m+[m[32m    background:green;[m[41m[m
+[32m+[m[32m   }[m[41m[m
+[32m+[m[32m   .red{[m[41m[m
+[32m+[m[32m    background:red;[m[41m[m
+[32m+[m[32m   }[m[41m[m
+[32m+[m[41m[m
+[32m+[m[41m[m
+    .bg{[m
+     background: url("images/bg3.jpg");[m
+     background-size: 105%;[m
+[36m@@ -270,7 +281,7 @@[m [mvar modalContainer = $("#modal-container");[m
+                       }, 1000);[m
+   });[m
+ [m
+[31m-[m
+[32m+[m[32mconsole.log($(".icon-holder-small").attr('themecolor'));[m[41m[m
+    [m
+ [m
+ [m
+[1mdiff --git a/process-game.php b/process-game.php[m
+[1mindex fbcf434..2e70759 100644[m
+[1m--- a/process-game.php[m
+[1m+++ b/process-game.php[m
+[36m@@ -77,7 +77,7 @@[m [mif(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice[m
+ [m
+     $output = "<div class='name-indicator' style='float:left'>";[m
+     $output .= "<p>".$_SESSION['user_name']."</p>";[m
+[31m-	$output .= "<div class='icon-holder-small' themeColor='".$themeColor."' style='background:url(\"images/".$userChoice.".png\");'> </div> </div>";[m
+[32m+[m	[32m$output .= "<div class='icon-holder-small' themecolor='".$themeColor."' style='background:url(\"images/".$userChoice.".png\");'> </div> </div>";[m[41m[m
+ 	$output .= $sign;[m
+ [m
+ 	$output .= "<div class='name-indicator' style='float:right'>"; [m
