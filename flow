@@ -1,3 +1,19 @@
+===========================================================================
+  <div class="col-sm-8" id="username-login">
+        <input type="text" class="form-control" id="username" name="username"
+            placeholder="username" maxlength="30" required
+            value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>" >
+            <button onclick="emailLogin()">or login by email</button>
+      </div>
+      <div class="col-sm-8 collapse" id="email-login">
+        <input type="text" class="form-control" id="email" name="email"
+            placeholder="email" maxlength="30" required
+            value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" >
+            <button onclick="usernameLogin()">or login by Username</button>
+      </div>
+===========================================================================
+
+
 check the query and styles: when lose the positioning is not apropriate 
 add color attribute to img element and put a shadow effect with img color on the modal 
 
