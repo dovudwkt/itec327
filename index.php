@@ -58,9 +58,10 @@ $_SESSION['current_user'];
     #top-players-table tr:nth-child(odd){
       background-color:#e8e8e8;
      }
-    #top-players-table  td{
+    #top-players-table  td, #top-players-table  th{
       border: 1px solid white;
-      padding: 6px;
+      padding: 5px 12px;
+      text-align:center;
      }
      .icon-holder{
       width:140px;
@@ -144,6 +145,17 @@ $_SESSION['current_user'];
       max-height:200px;
       margin: 15px;
       flex: 1 25%;
+    }
+    #wins-icon{
+      background-image:url('images/arrow_up.png');
+    }
+    #loses-icon{
+      background-image:url('images/arrow_down.png');
+    }
+    #wins-icon, #loses-icon{
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
 
    </style>

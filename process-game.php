@@ -45,7 +45,7 @@ if(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice
 	if(isset($userWon)){
 		//user WINS
 		if($userWon){
-			$query = "UPDATE users set credits = credits +".$xp." where id = ".$_SESSION['current_user'];
+			$query = "UPDATE users set wins = wins + 1, credits = credits +".$xp." where id = ".$_SESSION['current_user'];
 			$sign = "<span style='margin-top: auto;margin-bottom: auto;flex: 1;font-size: 115px;'> > </span>";
 			$message = "<tr><td><h2> +".$xp."xp</h2></td></tr>";
 			$message .="<tr><td> You Won! </td></tr>";
@@ -54,7 +54,7 @@ if(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice
 		}
 		//user LOSES
 		elseif(!$userWon){
-			$query = "UPDATE users set credits = credits -".$xp." where id = ". $_SESSION['current_user'];
+			$query = "UPDATE users set loses = loses + 1, credits = credits -".$xp." where id = ". $_SESSION['current_user'];
 			$sign = "<span style='margin-top: auto;margin-bottom: auto;flex: 1;font-size: 115px;'> < </span>";
 			$message = "<tr><td><h2> -".$xp."xp</h2></td></tr>";
 			$message .= "<tr><td> You Lost </td></tr>";
