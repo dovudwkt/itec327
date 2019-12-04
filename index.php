@@ -202,8 +202,8 @@ $_SESSION['current_user'];
 
 <div class="container" id="container" style="margin-top:5px">     
 <!-- Header Section -->
- <nav class="col-sm-2">
-      <div class="btn-group-vertical btn-group-sm" role="group"
+ <nav class="col-sm-14">
+      <div class="btn-group-vertical btn-group-sm" style='margin-left:90%' role="group"
         aria-label="Button Group">
           <button type="button" class="btn btn-secondary"
                 onclick="location.href = 'logout.php'" >Logout</button>
