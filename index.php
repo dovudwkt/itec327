@@ -139,6 +139,11 @@ $_SESSION['current_user'];
       background: #fdfdfd;
       flex-flow: wrap;
     }
+
+    #closeModal_btn:hover{
+      background-color:#56cec5;
+    }
+
     .name-indicator{
       width: 33%;
       height: 32%;
@@ -194,8 +199,11 @@ $_SESSION['current_user'];
 
       <!-- <h2 class="row col-md-4">+2xp</h2>
       <p class="row col-md-4">Win!</p>       -->
-
-    <button id="closeModal_btn" style="position: absolute;bottom: 0;margin-left: 41%;margin-right: 50%;">OK</button>
+<!-- 
+    <button id="closeModal_btn" style=" position: absolute;
+                                        bottom: 0;
+                                        padding: 10px 30px;
+                                        background-color: #19aba0;">OK</button> -->
   </div>
 
 </div>

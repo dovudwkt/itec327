@@ -86,7 +86,12 @@ if(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice
 	// $output .= $message;
 	$output .= "<table style='text-align:center'>".$message."</table>";
 
-	$output .= "<button id='closeModal_btn' style='position: absolute;bottom: 0;margin-left: 41%;margin-right: 50%;' >OK</button>";
+	$output .= "<input id='closeModal_btn' class='btn btn-primary btn-sm' style='position: absolute;bottom: 0;' value='OK'>";
+	 
+			                                        // 
+			                                        // padding: 10px 30px;
+			                                        // color:white;
+			                                        // background-color: #19aba0'
 	echo $output;
 	
 }
