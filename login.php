@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {                               //#1
             value="Login">
         </div>
     </div>
-    <p class='text-center'><a href="register.php" style="color:#004590">Don't have an account? Sign up</a></p>
+    <p class='text-center'>Don't have an account?<a href="register.php" style="color:#004590"> Sign up</a></p>
   </form>
 </div>
 
