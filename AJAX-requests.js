@@ -15,34 +15,51 @@ $("input[name='choice']").on('click', function(){
 $("#playBtn").on('click', function(){play() } );
 
 function play(){
-  if(!document.querySelector("input[name='choice']:checked") ){
-      alert("Enter your choice!");
+  if(! $("input[name='choice']:checked") ){
+      alert("Enter your choice, please!");
   }else{
-      var user_choice = document.querySelector("input[name='choice']:checked").value;
+      var user_choice = $("input[name='choice']:checked").val();
       console.log(user_choice);
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          // alert(this.responseText);
-          displayResult(this.responseText);
+      $.ajax({
+        url: 'process-game.php',
+        type: 'Get',
+        data: {uc: user_choice},
 
+        success: function(data){
+          displayResult(data);
           show_Top_Players();  //load and display updated values asynchronously
           show_my_xp();
+        },
+        error: function(){
+          console.log("Something went wrong with AJAX request");
         }
-      };
+
+      });
+
+
+
+      // xhttp = new XMLHttpRequest();
+      // xhttp.onreadystatechange = function() {
+      //   if (this.readyState == 4 && this.status == 200) {
+      //     // alert(this.responseText);
+      //     displayResult(this.responseText);
+
+      //     show_Top_Players();  //load and display updated values asynchronously
+      //     show_my_xp();
+      //   }
+      // };
           // send parameters to server for processing
-      xhttp.open("GET", "process-game.php?uc="+user_choice, true);
-      xhttp.send();
+      // xhttp.open("GET", "process-game.php?uc="+user_choice, true);
+      // xhttp.send();
   }
 
 }
 var modalContainer = $("#modal-container");
 // modalContainer.show();
 
-
-function displayResult(responseTxt){
+function displayResult(data){
   modalContainer.fadeIn(200);
-  $("#modal").html(responseTxt);
+  $("#modal").html(data);
  
   $(".container").delay(1000).css({
                         "filter":"blur(4px)"
@@ -55,27 +72,54 @@ function closeModal(){
 }
 
 function show_Top_Players(){
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.querySelector("#top-players-container").innerHTML = this.responseText;
+  var container = $("#top-players-container");
+  //jquery ajax
+  $.ajax({
+    url: 'show-top-players.php',
+
+    success: function(data){
+      container.html(data);
+    },
+    error: function(){
+      console.log("Something went wrong with AJAX request");
     }
-  };
-  xhttp.open("GET", "show-top-players.php", true);
-  xhttp.send();
+
+  });
+
+  // xhttp = new XMLHttpRequest();
+  // xhttp.onreadystatechange = function() {
+  //   if (this.readyState == 4 && this.status == 200) {
+  //     document.querySelector("#top-players-container").innerHTML = this.responseText;
+  //   }
+  // };
+  // xhttp.open("GET", "show-top-players.php", true);
+  // xhttp.send();
 
 }
 
 
 function show_my_xp(){
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.querySelector("#show-name-xp").innerHTML = this.responseText;
+
+  $.ajax({
+    url: 'show-name-xp.php',
+    type:'Post',
+    success: function(data){
+      $('#show-name-xp').html(data);
+    },
+    error: function(){
+        console.log("Error with request to 'show-name-xp.php'!");
     }
-  };
-  xhttp.open("GET", "show-name-xp.php", true);
-  xhttp.send();
+
+  });
+
+  // xhttp = new XMLHttpRequest();
+  // xhttp.onreadystatechange = function() {
+  //   if (this.readyState == 4 && this.status == 200) {
+  //     document.querySelector("#show-name-xp").innerHTML = this.responseText;
+  //   }
+  // };
+  // xhttp.open("GET", "show-name-xp.php", true);
+  // xhttp.send();
 }
 
 
