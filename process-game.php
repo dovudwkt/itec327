@@ -13,6 +13,9 @@ if(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice
 	$randNum = rand(0,2);
 	$compChoice = $options[$randNum];
 
+	$message;
+	$messageColor;	
+	
 	$xp = 2; //set xp to earn or lose 
 
 //-------------T_E_S_T__S_E_C_T_I_O_N__start-------------------
@@ -48,7 +51,8 @@ if(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice
 			$query = "UPDATE users set wins = wins + 1, credits = credits +".$xp." where id = ".$_SESSION['current_user'];
 			$sign = "<span style='margin-top: auto;margin-bottom: auto;flex: 1;font-size: 115px;'> > </span>";
 			$message = "<tr><td><h2> +".$xp."xp</h2></td></tr>";
-			$message .="<tr><td> You Won! </td></tr>";
+			$message .="<tr><td><h2> You Won! </h2></td></tr>";
+			$messageColor = '#03b300';
 
 			$themeColor = $uc_test->themeColor; //test beta ----------------
 		}
@@ -57,7 +61,8 @@ if(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice
 			$query = "UPDATE users set loses = loses + 1, credits = credits -".$xp." where id = ". $_SESSION['current_user'];
 			$sign = "<span style='margin-top: auto;margin-bottom: auto;flex: 1;font-size: 115px;'> < </span>";
 			$message = "<tr><td><h2> -".$xp."xp</h2></td></tr>";
-			$message .= "<tr><td> You Lost </td></tr>";
+			$message .= "<tr><td><h2> You Lost </h2></td></tr>";
+			$messageColor = '#f90000';
 
 			$themeColor = $botch_test->themeColor; //test beta ----------------
 		}
@@ -70,7 +75,8 @@ if(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice
 	elseif(!isset($userWon)){
 		$sign = "<span style='margin-top: auto;margin-bottom: auto;flex: 1;font-size: 115px'> = </span>";
 		$message = "<tr><td><h2> +0xp </h2></td></tr>";
-		$message .= "<tr><td> Draw </td></tr>";
+		$message .= "<tr><td><h2> Draw </h2></td></tr>";
+		$messageColor = 'black';
 
 		$themeColor = "black";//test beta ----------------
 	}
@@ -84,9 +90,9 @@ if(isset($_POST['processGame']) || isset($_GET['uc']) ){ //uc = user choice
 	$output .= "<p>Bot</p>";
 	$output .= "<div class='icon-holder-small' style='background:url(\"images/".$compChoice.".png\");'></div> </div>";
 	// $output .= $message;
-	$output .= "<table style='text-align:center'>".$message."</table>";
+	$output .= "<table style='text-align:center; color:".$messageColor." '>".$message."</table>";
 
-	$output .= "<input id='closeModal_btn' class='btn btn-primary btn-sm' style='position: absolute;bottom: 0;' value='OK'>";
+	$output .= "<input type='button' id='closeModal_btn' class='btn btn-primary btn-lg' style='position: absolute;bottom: 0;' value='OK'>";
 	 
 			                                        // 
 			                                        // padding: 10px 30px;

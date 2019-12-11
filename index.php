@@ -284,8 +284,6 @@ style="margin-bottom:2px; padding:7px; background:linear-gradient(white, #e3ffdf
 </div>
 
 </div>
-
-
  
 <script type="text/javascript">
 $(document).ready(function(){
@@ -293,15 +291,15 @@ $(document).ready(function(){
 var modalContainer = $("#modal-container");
 
    $(document).on('click', '#closeModal_btn', function(){
-      console.log("asdsad");
-        modalContainer.hide();
+      modalContainer.hide();
 
-        $(".container").css({
-                        'filter':"none"
-                      }, 1000);
+      $(".container").css({
+                      'filter':"none"
+                    }, 1000);
+
   });
 
-console.log($(".icon-holder-small").attr('themecolor'));
+
    
 
 

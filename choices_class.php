@@ -11,11 +11,11 @@ class Choices {
   }
   function setThemeColor(){
   	 switch($this->userChoice){
-    	case 'rock': $this->themeColor = 'blue';
+    	case 'rock': $this->themeColor = '#19aba0';
     	break;
-    	case 'paper': $this->themeColor = 'red';
+    	case 'paper': $this->themeColor = '#e2122c';
     	break;
-    	case 'scissors': $this->themeColor = 'green';
+    	case 'scissors': $this->themeColor = '#b3cc33';
     	break;
     }
 

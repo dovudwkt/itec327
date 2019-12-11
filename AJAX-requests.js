@@ -26,6 +26,7 @@ $(document).ready(function(){
           data: {uc: user_choice},
           success: function(data){
             displayResult(data);
+
             show_Top_Players();  //load and display updated values asynchronously
             show_my_xp();
           },
@@ -48,6 +49,12 @@ $(document).ready(function(){
     $(".container").delay(1000).css({
                           "filter":"blur(4px)"
                         }, 1500);
+
+    //set shadow ti the container with the color of the winner's choice
+    var themeColor = $(".icon-holder-small").attr('themecolor');
+    $(".modal").css({
+                    "box-shadow":"0px 0px 30px 4px "+themeColor
+                   });
   }
 
 
