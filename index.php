@@ -287,7 +287,6 @@ style="margin-bottom:2px; padding:7px; background:linear-gradient(white, #e3ffdf
  
 <script type="text/javascript">
 $(document).ready(function(){
-
 var modalContainer = $("#modal-container");
 
    $(document).on('click', '#closeModal_btn', function(){
@@ -298,10 +297,6 @@ var modalContainer = $("#modal-container");
                     }, 1000);
 
   });
-
-
-   
-
 
 
 })
