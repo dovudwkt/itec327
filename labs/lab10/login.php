@@ -9,34 +9,52 @@
 if(isset($_POST['login'])){
 extract($_POST);
 
-// Create connection
 $conn = mysqli_connect("localhost", "root", "", "autos");
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT username, passwrd FROM users where username = ?";
- $q = mysqli_stmt_init($conn);
-      mysqli_stmt_prepare($q, $sql);
-      mysqli_stmt_bind_param($q, "s", $username);
-      mysqli_stmt_execute($q);
-      $result = mysqli_stmt_get_result($q);
-      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-        if (mysqli_num_rows($result) == 1) {
 
-          // if (password_verify($pswd, $row['passwrd'])) {                         //#2
-              if($passwrd == $row['passwrd']){ 
-                 session_start();
-                 // $_SESSION['current_user'] =  $rowAssoc['user_id'];
-                 $_SESSION['user'] = 'logged';
-                 $_SESSION['username'] = $row['username'];
 
-              $url = "menu.php";   
-              header('Location: ' . $url);
-          }
+// ---------------OOP Method----------------------
+$stmt = $conn->stmt_init();
+$sql = "SELECT passwrd FROM users where username = ?";
 
-// $conn->close();
+$stmt->prepare($sql);
+$stmt->bind_param('s', $username);
+$stmt->execute() or die("Query error: ");
+$stmt->store_result();
+$stmt->bind_result($pswd);
+
+if ($stmt->num_rows>0)
+{
+  $stmt->fetch();
+  if($passwrd == $pswd){ 
+      session_start();
+      $_SESSION['user'] = 'logged';
+      $url = "menu.php";   
+      header('Location: ' . $url);
+  }  
 }
+// ---------------Procedural Method----------------------
+
+// $sql = "SELECT username, passwrd FROM users where username = ?";
+//  $q = mysqli_stmt_init($conn);
+//  mysqli_stmt_prepare($q, $sql);
+//  mysqli_stmt_bind_param($q, "s", $username);
+//  mysqli_stmt_execute($q);
+//  $result = mysqli_stmt_get_result($q);
+//  $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+//  if (mysqli_num_rows($result) == 1) {
+//    if($passwrd == $row['passwrd']){ 
+//      session_start();
+//      $_SESSION['user'] = 'logged';
+//      $url = "menu.php";   
+//      header('Location: ' . $url);
+//    }
+//  }
+
+
 }
 	
  ?>
