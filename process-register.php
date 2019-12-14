@@ -26,10 +26,13 @@ try
 	}
 
 	require ('mysqli_connect.php'); // Connect to the db.     
-	$query = "SELECT username FROM users";
+	$query = "SELECT username, email FROM users";
 	$result = mysqli_query($dbcon, $query);
     if (mysqli_num_rows($result) > 0) {
 	    while( $row = mysqli_fetch_assoc($result) ){
+	    	if($row['email'] == $email){
+	    		$errors[] = "email $email is already registered";
+	    	}
 	    	if($row['username'] == $username){
 	    		$errors[] = "Username $username already exists. Try another one.";
 	    	}
@@ -52,10 +55,10 @@ try
 		} else { // If it did not run OK.
   		    mysqli_close($dbcon); // Close the database connection.
 		    
-		    $errorstring = "<p class='text-center col-sm-8' style='color:red'>";
+		    $errorstring = "<p class='text-center' style='color:red'>";
 			$errorstring .= "System Error<br />You could not be registered due ";
 			$errorstring .= "to a system error. We apologize for any inconvenience.</p>"; 
-			echo "<p class=' text-center col-sm-2' style='color:red'>$errorstring</p>";
+			echo "<p class=' text-center' style='color:red'>$errorstring</p>";
   		
 		// exit();
 		}
@@ -65,7 +68,7 @@ try
 				$errorstring .= " - $msg<br>";
 			}
 			$errorstring .= "Please try again.<br>";
-			echo "<p class=' text-center col-sm-2' style='color:red'>$errorstring</p>";
+			echo "<p class=' text-center ' style='color:red'>$errorstring</p>";
 		}
 	}									
    catch(Exception $e) 

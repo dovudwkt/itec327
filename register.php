@@ -40,22 +40,24 @@ body{
 </head>
 <body>
 <div class="container" style="margin-top:30px">
-<div class="row" style="padding-left: 0px;">
 
-<div class="col-sm-5 mx-auto" >
+<!-- <div class="row" style="padding-left: 0px;"> -->
+<div class="row col-10" style="padding-left: 0px;">
+  <div class="col-sm-4">
  
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {                                //#1
- require('process-register-page.php');
+ require('process-register.php');
 }
-
 ?>
+</div>
+
+<div class="col-sm-6 mx-auto" >
 
 <h2 class="h2 text-center">Register</h2>
 <div class="box">
-  <form action="process-register.php" method="post" 
-  name="regform" id="regform">
+  <form action="register.php" method="post" name="regform" id="regform">
     <div class="form-group row">
       <label for="username" class="col-sm-4 col-form-label">Username:</label>
       <div class="col-sm-6">
