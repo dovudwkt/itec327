@@ -1,3 +1,8 @@
+
+register page, error outputting
+
+
+
 ===========================================================================
   <div class="col-sm-8" id="username-login">
         <input type="text" class="form-control" id="username" name="username"

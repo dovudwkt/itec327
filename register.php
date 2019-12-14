@@ -42,53 +42,56 @@ body{
 <div class="container" style="margin-top:30px">
 <div class="row" style="padding-left: 0px;">
 
+<div class="col-sm-5 mx-auto" >
  
 <?php
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {                                //#1
  require('process-register-page.php');
-} // End of the main Submit conditional.
+}
+
 ?>
-<div class="col-sm-5 mx-auto" >
+
 <h2 class="h2 text-center">Register</h2>
 <div class="box">
-<form action="process-register.php" method="post" onsubmit="return checked();"
-name="regform" id="regform">
-  <div class="form-group row">
-    <label for="username" class="col-sm-4 col-form-label">Username:</label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" id="username" name="username" 
-	  placeholder="username" maxlength="30" required>
+  <form action="process-register.php" method="post" 
+  name="regform" id="regform">
+    <div class="form-group row">
+      <label for="username" class="col-sm-4 col-form-label">Username:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="username" name="username" 
+  	  placeholder="username" maxlength="30" required>
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="email" class="col-sm-4 col-form-label">E-mail:</label>
-    <div class="col-sm-6">
-      <input type="email" class="form-control" id="email" name="email" 
-	  placeholder="E-mail" maxlength="60" required>
+    <div class="form-group row">
+      <label for="email" class="col-sm-4 col-form-label">E-mail:</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control" id="email" name="email" 
+  	  placeholder="E-mail" maxlength="60" required>
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="password1" class="col-sm-4 col-form-label">Password:</label>
-    <div class="col-sm-6">
-      <input type="password" class="form-control" id="password1" name="password1" 
-	  placeholder="Password" minlength="8" maxlength="12" required>
-	  <span id='message'>Between 8 and 12 characters.</span>
+    <div class="form-group row">
+      <label for="password1" class="col-sm-4 col-form-label">Password:</label>
+      <div class="col-sm-6">
+        <input type="password" class="form-control" id="password1" name="password1" 
+  	  placeholder="Password" minlength="8" maxlength="12" required>
+  	  <span id='message'>Between 8 and 12 characters.</span>
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="password2" class="col-sm-4 col-form-label">Confirm Password:</label>
-    <div class="col-sm-6">
-      <input type="password" class="form-control" id="password2" name="password2" 
-	  placeholder="Confirm Password" minlength="8" maxlength="12" required>
+    <div class="form-group row">
+      <label for="password2" class="col-sm-4 col-form-label">Confirm Password:</label>
+      <div class="col-sm-6">
+        <input type="password" class="form-control" id="password2" name="password2" 
+  	  placeholder="Confirm Password" minlength="8" maxlength="12" required>
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-4 mx-auto" >
-	  <input id="submit" class="btn btn-primary" type="submit" name="submit" value="Register">
+    <div class="form-group row">
+      <div class="col-sm-4 mx-auto" >
+  	  <input id="submit" class="btn btn-primary" type="submit" name="submit" value="Register">
+      </div>
     </div>
-  </div>
-    <p class="col-sm-7 mx-auto">Already have an account?  <a href="login.php">Sign in</a></p>
-</form>
+      <p class="col-sm-7 mx-auto">Already have an account?  <a href="login.php">Sign in</a></p>
+  </form>
 </div> <!-- end .box -->
 
 </div>
