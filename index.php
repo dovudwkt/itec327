@@ -49,13 +49,16 @@ $_SESSION['current_user'];
   aside{
     float:right;
   }
-    #top-players-table tr:nth-child(odd){
-      background-color:#e8e8e8;
+
+    #top-players-table tr:nth-child(even){
+      /*background-color:#f7f3a154;*/
      }
     #top-players-table  td, #top-players-table  th{
-      border: 1px solid white;
-      padding: 5px 12px;
+      /*border: 1px solid white;*/
+      /*padding: 5px 12px;*/
       text-align:center;
+      
+      padding: 3.35px 1.5rem;
      }
      .icon-holder{
       width:140px;
@@ -172,25 +175,25 @@ $_SESSION['current_user'];
     </nav>
     <header class="jumbotron row col-sm-14"
     style="margin-bottom:2px; padding:7px; background:linear-gradient(white, #e3ffdfc2);">
-        <div class="col-sm-6"> 
+        <div class="col-sm-3"> 
             <div id="show-name-xp"></div>   
         </div>
-        <div class="col-sm-6">
-            <div style="float:right" id="top-players-container"></div>
+        <div class="col-sm-9">
+            <div style="float:" id="top-players-container"></div>
         </div>
     </header>
     <div class="row" style="padding-left: 0px;">
 
-        <h2 class="mx-auto">Make your choice <?php if( isset($_SESSION['user_name']) ) echo $_SESSION['user_name']  ?></h2>
+        <h2 class="text-muted mx-auto">Make your choice <?php if( isset($_SESSION['user_name']) ) echo $_SESSION['user_name']  ?></h2>
         <section id="icons-sectionlll" class="row col-sm-10 mx-auto">
             <div class="row mx-auto">
-                <div class="col-sm-4"><label for="rock"> <div class=" icon-holder" style="background:url('images/rock.png')">
+                <div title='Rock' class="col-sm-4"><label for="rock"> <div class=" icon-holder" style="background:url('images/rock.png')">
                     <input type="radio" hidden name="choice" value="rock" id="rock"></div></label>
                 </div>
-                <div class="col-sm-4"><label for="paper"><div class="icon-holder" style="background:url('images/paper.png')">
+                <div title='Paper' class="col-sm-4"><label for="paper"><div class="icon-holder" style="background:url('images/paper.png')">
                     <input type="radio" hidden name="choice" value="paper" id="paper"></div></label>
                 </div>
-                <div class="col-sm-4"><label for="scissors"><div class="icon-holder" style="background:url('images/scissors.png')">
+                <div title='Scissors' class="col-sm-4"><label for="scissors"><div class="icon-holder" style="background:url('images/scissors.png')">
                     <input type="radio" hidden name="choice" value="scissors" id="scissors"></div></label>
                 </div>
                 <input class="row mx-auto btn btn-primary btn-lg" type="button" value="play" onclick="" id="playBtn" name="">
