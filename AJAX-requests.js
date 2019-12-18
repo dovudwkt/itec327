@@ -12,13 +12,13 @@ $(document).ready(function(){
   })
 
   // send data on PLAY click by calling play() function
-  $("#playBtn").on('click', function(){play() } );
-
-  function play(){
-    if(! $("input[name='choice']:checked") ){
-        alert("Enter your choice, please!");
+ $("#playBtn").on('click', function(){play() } );
+ 
+ function play(){
+    var user_choice = $("input[name='choice']:checked").val();
+    if(!user_choice){ //if choice is not made
+        alert("Make your choice, please!");
     }else{
-        var user_choice = $("input[name='choice']:checked").val();
         console.log(user_choice);
         $.ajax({
           url: 'process-game.php',
@@ -35,26 +35,26 @@ $(document).ready(function(){
           }
 
         });
-
     }
 
   }
+
   var modalContainer = $("#modal-container");
   // modalContainer.show();
 
   function displayResult(data){
-    modalContainer.fadeIn(200);
-    $("#modal").html(data);
-   
-    $(".container").delay(1000).css({
-                          "filter":"blur(4px)"
-                        }, 1500);
+      modalContainer.fadeIn(200);
+      $("#modal").html(data);
+     
+      $(".container").delay(1000).css({
+                            "filter":"blur(4px)"
+                          }, 1500);
 
-    //set shadow ti the container with the color of the winner's choice
-    var themeColor = $(".icon-holder-small").attr('themecolor');
-    $(".modal").css({
-                    "box-shadow":"0px 0px 30px 4px "+themeColor
-                   });
+      //set shadow of the container with the color of the winner's choice
+      var themeColor = $(".icon-holder-small").attr('themecolor');
+      $(".modal").css({
+                      "box-shadow":"0px 0px 30px 4px "+themeColor
+                     });
   }
 
 

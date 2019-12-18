@@ -72,8 +72,11 @@ $_SESSION['current_user'];
       background-repeat: no-repeat !important;
       box-shadow: 0px 6px 20px -8px;
     }
-    .icon-holder:hover{
+    /*.icon-holder:hover{
       box-shadow: 0px 12px 8px -5px;
+    }*/
+    .choiceTxt{
+      display:none;
     }
 
      .icon-holder-small {
@@ -119,6 +122,7 @@ $_SESSION['current_user'];
       flex-direction: row;
       background: #fdfdfd;
       flex-flow: wrap;
+      border-radius:15px;
     }
     #closeModal_btn:hover{
       background-color:#56cec5;
@@ -148,20 +152,7 @@ $_SESSION['current_user'];
 <div class="bg"></div>
 <div class="modal-container" id="modal-container">
   <div class="modal" id="modal">
-      <!-- <div class='name-indicator' style='float:left'>
-        <p>Dovud</p>
-        <div class='icon-holder-small' style='background:url("images/rock.png");'></div> 
-      </div>
-      <span class='' style='margin-top: auto;margin-bottom: auto;flex: 1;font-size: 115px;'> < </span>
-      <div class='name-indicator' style='float:right'>
-        <p>Bot</p>
-        <div class='icon-holder-small' style='background:url("images/paper.png");'></div> 
-      </div>
-
-      <table>
-        <tr><td><h2>+2xp</h2></td></tr>
-        <tr><td>You Won!</td></tr>
-      </table> -->
+    <!-- this part will be generated dinamically from process-game.php -->
   </div>
 </div>
 
@@ -187,14 +178,20 @@ $_SESSION['current_user'];
         <h2 class="text-muted mx-auto">Make your choice <?php if( isset($_SESSION['user_name']) ) echo $_SESSION['user_name']  ?></h2>
         <section id="icons-sectionlll" class="row col-sm-10 mx-auto">
             <div class="row mx-auto">
-                <div title='Rock' class="col-sm-4"><label for="rock"> <div class=" icon-holder" style="background:url('images/rock.png')">
-                    <input type="radio" hidden name="choice" value="rock" id="rock"></div></label>
+                <div title='Rock' class="col-sm-4"><label for="rock"> <div class="icon-holder" style="background:url('images/rock.png')">
+                    <input type="radio" hidden name="choice" value="rock" id="rock"></div>
+                    <div class="choiceTxt text-center">Rock</div>
+                  </label>
                 </div>
                 <div title='Paper' class="col-sm-4"><label for="paper"><div class="icon-holder" style="background:url('images/paper.png')">
-                    <input type="radio" hidden name="choice" value="paper" id="paper"></div></label>
+                    <input type="radio" hidden name="choice" value="paper" id="paper"></div>
+                    <div class="choiceTxt text-center">Paper</div>
+                  </label>
                 </div>
                 <div title='Scissors' class="col-sm-4"><label for="scissors"><div class="icon-holder" style="background:url('images/scissors.png')">
-                    <input type="radio" hidden name="choice" value="scissors" id="scissors"></div></label>
+                   <input type="radio" hidden name="choice" value="scissors" id="scissors"></div>
+                    <div class="choiceTxt text-center">Scissors</div>
+                  </label>
                 </div>
                 <input class="row mx-auto btn btn-primary btn-lg" type="button" value="play" onclick="" id="playBtn" name="">
             </div>
@@ -211,6 +208,16 @@ $(document).on('click', '#closeModal_btn', function(){
     modalContainer.hide();
     $(".container").css({'filter':"none"}, 1000);
   });
+
+$(".icon-holder").parent().on('mouseenter', function(){
+    $(this).children('.choiceTxt').fadeIn('slow');
+})
+$(".icon-holder").parent().on('mouseleave', function(){
+    // $(this).children('.choiceTxt').fadeOut();
+})
+
+
+
 
 
 })
