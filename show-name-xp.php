@@ -8,7 +8,7 @@ include("mysqli_connect.php");
 	if($result) {
 		echo "<table class='table table-md table-sm table-striped text-center'>"; 
 		while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-			echo "<tr class='table-primary'><th >Username</th><td>".$row['username']."</td></tr>";			
+			echo "<tr class='table-primary'><th >Username</th><td>".$row['username']."</td></tr>";
 			echo "<tr class='table-primary'><th >Email</th><td>".$row['email']."</td></tr>";
 			echo "<tr class='table-info'><th>Credits</th><td>".$row['credits']."</td></tr>";
 			echo "<tr class='table-success'><th>Wins</th><td>".$row['wins']."</td></tr>";

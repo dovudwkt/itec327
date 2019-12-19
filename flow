@@ -1,6 +1,8 @@
+--reset password:
+	login page -> Generate new temporary password and display it so that user can login and reset password from profile
 
---header tables are not responsive well enough
 
+DONE: header tables are not responsive well enough
 DONE: put internal styles to external style.css file 
 DONE: register page, error outputting
 

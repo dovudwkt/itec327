@@ -87,6 +87,7 @@ body{
                   value="Login">
               </div>
           </div>
+           <p class='text-center'><a href="forgot-password.php" style="color:#004590">Forgot password?</a></p>
           <p class='text-center'>Don't have an account?<a href="register.php" style="color:#004590"> Sign up</a></p>
         </form>
       </div>

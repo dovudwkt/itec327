@@ -31,12 +31,19 @@ $_SESSION['current_user'];
 
 <div class="container" id="container" style="margin-top:5px">     
     <nav class="col-sm-14">
-        <div class="btn-group-vertical btn-group-sm" style='margin-left:90%' role="group"
+        <!-- <div class="btn-group-horizontal btn-group-sm" style='margin-left:90%' role="group"
         aria-label="Button Group">
             <button type="button" class="btn btn-secondary"
                 onclick="location.href = 'logout.php'" >Logout</button>
+            
+        </div> -->
+        <div class="btn-group" style='margin-left:80%'>
+         <button type="button" class="btn btn-secondary" onclick="location.href = 'logout.php'" >Logout</button>
+          <button type="button" class="btn btn-secondary" onclick="location.href = 'password-update.php'" >Settings</button>
+         
         </div>
     </nav>
+
     <header class="jumbotron row col-sm-14"
     style="margin-bottom:2px; padding:7px; background:linear-gradient(white, #e3ffdfc2);">
         <div class="col-lg-3"> 
@@ -72,6 +79,7 @@ $_SESSION['current_user'];
                 </div>
                 <input class="row mx-auto btn btn-primary btn-lg" type="button" value="play" onclick="" id="playBtn" name="">
             </div>
+
         </section>
     </div>
 
