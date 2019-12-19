@@ -1,0 +1,131 @@
+.blue{
+    background:blue;
+   }
+   .green{
+    background:green;
+   }
+   .red{
+    background:red;
+   }
+   .bg{
+    background: url("images/bg3.jpg");
+    background-size: 105%;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(1.4px);
+   }
+   #container{
+    background: #91ceabbf;
+    border-radius: 0px 0 60px 60px;
+   }
+  aside{
+    float:right;
+  }
+
+    #top-players-table  td, #top-players-table  th{
+      text-align:center;
+      padding: 4.35px 1.5rem;
+     }
+     .icon-holder{
+      width:140px;
+      height:140px;
+      /*margin:15px;*/
+      border-radius:20px;
+      float:left;
+      background-position: center !important;
+      background-size: contain !important;   
+      transition: .2s;  
+      background-repeat: no-repeat !important;
+      box-shadow: 0px 6px 20px -8px;
+    }
+    /*.icon-holder:hover{
+      box-shadow: 0px 12px 8px -5px;
+    }*/
+    .choiceTxt{
+      display:none;
+    }
+
+     .icon-holder-small {
+      width: 100%;
+      height: 100%;
+      /*margin: 15px;*/
+      border-radius: 20px;
+      /*float: left;*/
+      background-position: center !important;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      box-shadow: 0px 6px 20px -8px;
+    }
+    #icons-section{
+      width:100%;
+      height:250px;
+      position: relative;
+      padding:20px;
+    }
+    .active{
+      width:150px;
+      height:150px;
+      box-shadow: 0px 12px 8px -5px;
+    }
+    .modal-container{
+      position:absolute;
+      width:100vw;
+      height:100%;
+      background-color:#1f1f1f69;
+      z-index:99;
+      display:none;
+    }
+    .modal{
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      width: 30%;
+      height: 70%;
+      min-height: 274px;
+      max-width:409px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      background: #fdfdfd;
+      flex-flow: wrap;
+      border-radius:15px;
+    }
+    #closeModal_btn:hover{
+      background-color:#56cec5;
+    }
+    .name-indicator{
+      width: 33%;
+      height: 32%;
+      max-height:200px;
+      margin: 15px;
+      flex: 1 25%;
+    }
+    #wins-icon{
+      background-image:url('images/arrow_up.png');
+    }
+    #loses-icon{
+      background-image:url('images/arrow_down.png');
+    }
+    #wins-icon, #loses-icon{
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+@media only screen and (max-width: 600px) {
+  #top-players-table td, #top-players-table th{
+    padding: .75rem;
+  }
+  .modal{
+    width: 95%
+  }
+
+}
