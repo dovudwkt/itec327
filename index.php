@@ -30,17 +30,15 @@ $_SESSION['current_user'];
 </div>
 
 <div class="container" id="container" style="margin-top:5px">     
-    <nav class="col-sm-14">
+    <nav class="col-sm-14" style='position:relative'>
         <!-- <div class="btn-group-horizontal btn-group-sm" style='margin-left:90%' role="group"
         aria-label="Button Group">
             <button type="button" class="btn btn-secondary"
-                onclick="location.href = 'logout.php'" >Logout</button>
-            
+                onclick="location.href = 'logout.php'" >Logout</button> 
         </div> -->
-        <div class="btn-group" style='margin-left:80%'>
-         <button type="button" class="btn btn-secondary" onclick="location.href = 'logout.php'" >Logout</button>
-          <button type="button" class="btn btn-secondary" onclick="location.href = 'password-update.php'" >Settings</button>
-         
+        <button type="button" class="btn btn-secondary" onclick="location.href = 'password-update.php'" >Settings</button>
+        <div class="btn-group" style="position: absolute;right:0;">
+          <button type="button" class="btn btn-secondary"  onclick="location.href = 'logout.php'" >Logout</button>
         </div>
     </nav>
 
