@@ -30,27 +30,14 @@ $_SESSION['current_user'];
 </div>
 
 <div class="container" id="container" style="margin-top:5px">     
-<<<<<<< HEAD
     <nav class="col-sm-14" style="position:relative">
       <button type="button" class="btn btn-secondary" onclick="location.href = 'password-update.php'" >Settings
           </button>
       <button type="button" style='position:absolute; right:0;' class="btn btn-secondary" onclick="location.href = 'logout.php'" >Logout</button>
-=======
-    <nav class="col-sm-14" style='position:relative'>
-        <!-- <div class="btn-group-horizontal btn-group-sm" style='margin-left:90%' role="group"
-        aria-label="Button Group">
-            <button type="button" class="btn btn-secondary"
-                onclick="location.href = 'logout.php'" >Logout</button> 
-        </div> -->
-        <button type="button" class="btn btn-secondary" onclick="location.href = 'password-update.php'" >Settings</button>
-        <div class="btn-group" style="position: absolute;right:0;">
-          <button type="button" class="btn btn-secondary"  onclick="location.href = 'logout.php'" >Logout</button>
-        </div>
->>>>>>> 8eb2820224e305215cd7ba6cab86cac48b5c4873
     </nav>
 
-    <header class="jumbotron row col-sm-14"
-    style="margin-bottom:2px; padding:7px; background:linear-gradient(white, #e3ffdfc2);">
+    <header class="jumbotron row col-sm-14" style="margin-bottom:2px; padding:7px; 
+          background:linear-gradient(white, #e3ffdfc2);">
         <div class="col-lg-3"> 
             <div id="show-name-xp">
               <!-- dinamically generated from "show-name-xp.php" -->
