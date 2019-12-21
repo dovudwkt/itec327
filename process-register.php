@@ -25,7 +25,7 @@ try
 		$errors[] = 'You forgot to enter your password(s).';
 	}
 
-	require ('mysqli_connect.php'); // Connect to the db.     
+	include ('mysqli_connect.php'); // Connect to the db.     
 	$query = "SELECT username, email FROM users";
 	$result = mysqli_query($dbcon, $query);
     if (mysqli_num_rows($result) > 0) {

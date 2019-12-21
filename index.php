@@ -17,7 +17,7 @@ $_SESSION['current_user'];
   <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha3849gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="AJAX-requests.js"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
  
 </head>
 <body>
@@ -25,23 +25,15 @@ $_SESSION['current_user'];
 <div class="bg"></div>
 <div class="modal-container" id="modal-container">
   <div class="modal" id="modal">
-    <!-- this part will be generated dinamically from "process-game.php" -->
+    <!--  will be generated dinamically from "process-game.php" -->
   </div>
 </div>
 
 <div class="container" id="container" style="margin-top:5px">     
-    <nav class="col-sm-14">
-        <!-- <div class="btn-group-horizontal btn-group-sm" style='margin-left:90%' role="group"
-        aria-label="Button Group">
-            <button type="button" class="btn btn-secondary"
-                onclick="location.href = 'logout.php'" >Logout</button>
-            
-        </div> -->
-        <div class="btn-group" style='margin-left:80%'>
-         <button type="button" class="btn btn-secondary" onclick="location.href = 'logout.php'" >Logout</button>
-          <button type="button" class="btn btn-secondary" onclick="location.href = 'password-update.php'" >Settings</button>
-         
-        </div>
+    <nav class="col-sm-14" style="position:relative">
+      <button type="button" class="btn btn-secondary" onclick="location.href = 'password-update.php'" >Settings
+          </button>
+      <button type="button" style='position:absolute; right:0;' class="btn btn-secondary" onclick="location.href = 'logout.php'" >Logout</button>
     </nav>
 
     <header class="jumbotron row col-sm-14"

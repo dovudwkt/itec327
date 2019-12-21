@@ -60,10 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
       $errorstring .= "Please try again.<br>";
       echo "<p class=' text-center' style='color:red'>$errorstring</p>";
-    }// End of if (!empty($errors)) IF.
+    }
         
   }
-  catch(Exception $e) // We finally handle any problems here
+  catch(Exception $e) 
   {
     print "The system is busy please try later";
   }

@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>workout||Log in</title>
+  <title>Paper Rock Scissors</title>
   <meta charset="utf-8">
-  <meta name="viewport" content=
-      "width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS File -->
-  <link rel="stylesheet"
-  href=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-  integrity=
- "sha3849gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-  crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha3849gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
    <script src="verify.js"></script>
 <style type="text/css">
 body{
@@ -38,7 +31,6 @@ body{
 <body>
 <div class="container" style="margin-top:30px">
   <div class="row col-10" style="padding-left: 0px;">
-      <!-- Validate Input -->
     <div class="col-sm-3">
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {                               //#1

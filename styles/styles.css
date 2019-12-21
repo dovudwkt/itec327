@@ -8,7 +8,7 @@
     background:red;
    }
    .bg{
-    background: url("images/bg3.jpg");
+    background: url("../images/bg3.jpg");
     background-size: 105%;
     background-position: 50% 40%;
     background-repeat: no-repeat;
@@ -109,10 +109,10 @@
       flex: 1 25%;
     }
     #wins-icon{
-      background-image:url('images/arrow_up.png');
+      background-image:url('../images/arrow_up.png');
     }
     #loses-icon{
-      background-image:url('images/arrow_down.png');
+      background-image:url('../images/arrow_down.png');
     }
     #wins-icon, #loses-icon{
       background-position: center;
