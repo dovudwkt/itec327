@@ -32,7 +32,8 @@
 
     #top-players-table  td, #top-players-table  th{
       text-align:center;
-      padding: 4.35px 1.5rem;
+      /*padding: 4.35px 1.5rem;*/
+      padding: 2.35px 1.5rem;
      }
      .icon-holder{
       width:140px;
@@ -87,7 +88,7 @@
       position: absolute;
       margin-left: auto;
       margin-right: auto;
-      width: 30%;
+      width: 41%;
       height: 70%;
       min-height: 274px;
       max-width:409px;
@@ -120,9 +121,9 @@
       background-repeat: no-repeat;
     }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   #top-players-table td, #top-players-table th{
-    padding: .75rem;
+    padding: .45rem;
   }
   .modal{
     width: 95%
