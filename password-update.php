@@ -49,7 +49,7 @@ if(isset($_POST['updt_pswd'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Template for an interactive web page</title>
+  <title>Update Password</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" 
@@ -103,5 +103,6 @@ if(isset($_POST['updt_pswd'])){
 </div>
 
 </div>
+<?php include ("myInfo.php")  ?>
 </body>
 </html>

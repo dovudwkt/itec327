@@ -1,6 +1,10 @@
---reset password:
-	login page -> Generate new temporary password and display it so that user can login and reset password from profile
+--Contact me page
 
+
+
+
+DONE: reset password:
+	login page -> Generate new temporary password and display it so that user can login and reset password from profile
 
 DONE: header tables are not responsive well enough
 DONE: put internal styles to external style.css file 

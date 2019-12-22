@@ -11,7 +11,7 @@ $_SESSION['current_user'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Game|Login</title>
+  <title>Paper Scissors Rock</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha3849gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -76,7 +76,9 @@ $_SESSION['current_user'];
     </div>
 
 </div> <!-- end of #container -->
- 
+
+<?php include ("myInfo.php")  ?>
+
 <script type="text/javascript">
 
 $(document).ready(function(){

@@ -128,5 +128,8 @@
   .modal{
     width: 95%
   }
+  .footer{
+    display:none;
+  }
 
 }

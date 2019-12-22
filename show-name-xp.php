@@ -13,11 +13,6 @@ include("mysqli_connect.php");
 			echo "<tr class='table-info'><th>Credits</th><td>".$row['credits']."</td></tr>";
 			echo "<tr class='table-success'><th>Wins</th><td>".$row['wins']."</td></tr>";
 			echo "<tr class='table-danger'><th>Loses</th><td>".$row['loses']."</td></tr>";
-	
-
-		
-
-			// echo "<p>".$row['username']." | ". $row['credits']. "xp | <span style='color:green' title='wins'>".$row['wins']."</span> | <span style='color:red' title='loses'>".$row['loses']."</span> </p>";
 		}
 		echo "</table>";
 	}

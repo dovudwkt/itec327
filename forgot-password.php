@@ -86,5 +86,7 @@ function password_generate($chars)
 
 	</div>
 </div>
+<?php include ("myInfo.php")  ?>
+
 </body>
 </html>

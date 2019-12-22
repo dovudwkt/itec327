@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2019 at 03:17 PM
+-- Generation Time: Dec 21, 2019 at 07:32 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.1.26
 
@@ -47,11 +47,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `profile_photo`, `registration_date`, `credits`, `wins`, `loses`) VALUES
-(1, 'Dovud', 'dinomov99@gmail.com', '$2y$10$L8PeHvBrQCxZ4nIl21vJXu1VpRA8n40cK6nCxzoaBgxCU3GL4CcSK', NULL, '2019-11-11', 25, 16, 35),
-(8, 'Selena', 'selena2@gmail.com', '$2y$10$/Jz/EQRq5745UXue4XFi1O6q4DyZlGnAEs0rTDASR9WpkQJNBk.sK', NULL, '2019-11-22', 31, 43, 11),
+(1, 'Dovud', 'dinomov99@gmail.com', '$2y$10$z0COOCdhf980dC/U5fMawe9EbQNmD2NeheHmxcqQHidQCZmPw.5Um', NULL, '2019-11-11', 29, 18, 35),
+(8, 'Selena', 'selena2@gmail.com', '$2y$10$zQCvUfRcWjxwoTJpisN/VOPwPwHMgbpiAE4uw9iisPg6GNsOIpghe', NULL, '2019-11-22', 31, 43, 11),
 (15, 'Ali', 'lilili@gmail.com', '$2y$10$hmCnFSPtia.amC/usxDSvOFaeks3FpYk6pioLsVEXM3EcYJQUp622', NULL, '2019-12-02', 10, 2, 2),
 (19, 'sadsad', 'asd@sads.cc', '$2y$10$518.MGV.CP9PYxhfZifPceswy168E1DxY6cf2QrXqnTXVU/9pdNca', NULL, '2019-12-14', 4, 1, 4),
-(21, 'abu', 'abu@gmail.com', '$2y$10$V4vtl6930.YJGc3CKUHp/eG/m06fJOk2CAPhaCgyNMmguk7wkBptq', NULL, '2019-12-18', 2, 9, 13);
+(21, 'abu', 'abu@gmail.com', '$2y$10$V4vtl6930.YJGc3CKUHp/eG/m06fJOk2CAPhaCgyNMmguk7wkBptq', NULL, '2019-12-18', 2, 9, 13),
+(23, 'Munir', 'munir@gmail.com', '$2y$10$c3FBpyKr9yWqYzbIiY8PXOXqT7/73oJ/aqYb6PrQfIHe4mDlFhhTi', NULL, '2019-12-21', 10, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -71,7 +72,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
